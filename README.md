@@ -1,68 +1,70 @@
 # Smart Commit Message
 
-AI 驱动的 VS Code 插件，自动分析 Git 代码变更并生成高质量的 Commit Message。
+<div align="center">
+  <a href="./README.zh.md">中文</a> | English
+</div>
 
-## 功能特性
+AI-powered VS Code extension that automatically analyzes Git code changes and generates high-quality commit messages.
 
-- **AI 自动生成** — 分析 `git diff` 内容，一键生成符合规范的 Commit Message
-- **Source Control 集成** — 在 Git 面板直接点击 sparkle 按钮生成
-- **多种风格** — 支持 Conventional Commits、简洁模式、详细模式
-- **双语支持** — 生成语言可选中文或英文
-- **兼容多平台** — 支持 OpenAI 格式 API（DeepSeek、OpenAI 等）
-- **自定义 Prompt** — 可追加自定义 System Prompt 控制生成行为
+## Features
 
-## 安装
+- **AI Auto-Generation** — Analyzes `git diff` content and generates commit messages with one click
+- **Source Control Integration** — Click the sparkle button directly in the Git panel
+- **Multiple Styles** — Supports Conventional Commits, Simple, and Detailed modes
+- **Bilingual Support** — Choose between Chinese or English for generated messages
+- **Multi-Platform Compatible** — Supports OpenAI-format APIs (DeepSeek, OpenAI, etc.)
+- **Custom Prompt** — Append custom system prompts to control generation behavior
 
-1. 在 VS Code 扩展商店搜索 "Smart Commit Message"
-2. 点击安装
+## Installation
 
-## 使用方法
+1. Search for "Smart Commit Message" in the VS Code Extension Marketplace
+2. Click Install
 
-1. 在编辑器中修改代码
-2. 打开 **Source Control** 面板（Ctrl+Shift+G）
-3. 点击工具栏的 sparkle 按钮，或按 `Ctrl+Shift+P` 输入 **"生成 Commit Message"**
-4. 生成的 Commit Message 会自动填入输入框
+## Usage
 
-## 配置项
+1. Edit your code in the editor
+2. Open the **Source Control** panel (Ctrl+Shift+G)
+3. Click the sparkle button in the toolbar, or press `Ctrl+Shift+P` and type **"Generate Commit Message"**
+4. The generated commit message will be automatically filled into the input box
 
-在 VS Code Settings 中搜索 `Smart Commit Message` 进行配置：
+## Configuration
 
-| 配置项 | 说明 | 默认值 |
-|--------|------|--------|
-| `smartCommitMessage.apiKey` | AI 服务的 API Key | - |
-| `smartCommitMessage.baseUrl` | OpenAI 兼容格式的 API 基础地址 | `https://api.deepseek.com` |
-| `smartCommitMessage.model` | 用于生成 Commit 的模型名称 | `deepseek-v4-flash` |
-| `smartCommitMessage.style` | Commit 信息风格（conventional / simple / detailed） | `conventional` |
-| `smartCommitMessage.language` | 生成 Commit 信息的语言（English / Chinese） | `Chinese` |
-| `smartCommitMessage.customPrompt` | 追加在风格模板后的自定义 System Prompt | - |
+Search for `Smart Commit Message` in VS Code Settings:
 
-## 快速开始（DeepSeek）
+| Setting | Description | Default |
+| ------- | ----------- | ------- |
+| `smartCommitMessage.apiKey` | API Key for the AI service | - |
+| `smartCommitMessage.baseUrl` | OpenAI-compatible API base URL | `https://api.deepseek.com` |
+| `smartCommitMessage.model` | Model name for commit generation | `deepseek-v4-flash` |
+| `smartCommitMessage.style` | Commit message style (conventional / simple / detailed) | `conventional` |
+| `smartCommitMessage.language` | Language for generated commits (English / Chinese) | `Chinese` |
+| `smartCommitMessage.customPrompt` | Custom system prompt appended after the style template | - |
 
-1. 前往 [DeepSeek 开放平台](https://platform.deepseek.com) 获取 API Key
-2. 在 VS Code Settings 中设置 `smartCommitMessage.apiKey`
-3. 默认已配置 DeepSeek 的 baseUrl 和模型，直接点击 sparkle 按钮即可使用
+## Quick Start (DeepSeek)
 
-## Commit 风格说明
+1. Get your API Key from the [DeepSeek Platform](https://platform.deepseek.com)
+2. Set `smartCommitMessage.apiKey` in VS Code Settings
+3. DeepSeek's baseUrl and model are pre-configured by default — just click the sparkle button to use
 
-- **conventional** — 遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范，格式如 `feat(scope): description`
-- **simple** — 一句话简洁描述变更
-- **detailed** — 短摘要 + 详细变更说明
+## Commit Style Reference
 
-## 本地开发
+- **conventional** — Follows the [Conventional Commits](https://www.conventionalcommits.org/) spec, e.g. `feat(scope): description`
+- **simple** — One concise sentence describing the change
+- **detailed** — Short summary + detailed change description
+
+## Development & Release
 
 ```bash
 git clone https://github.com/bin-ran/smart-commit-message.git
 cd smart-commit-message
 npm install
-# 按 F5 启动 Extension Host 调试
+# Press F5 to launch Extension Host debugging
 ```
-
-## 发布
 
 ```bash
 npm install -g @vscode/vsce
-vsce package   # 打包
-vsce publish   # 发布
+vsce package   # Package
+vsce publish   # Publish
 ```
 
 ## License
